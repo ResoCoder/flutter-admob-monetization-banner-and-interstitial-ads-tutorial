@@ -79,7 +79,7 @@ class _HomePageState extends State<HomePage> {
         }, onAdFailedToLoad: (LoadAdError error) {
           _interstitialLoadAttempts += 1;
           _interstitialAd = null;
-          if (_interstitialLoadAttempts >= maxFailedLoadAttempts) {
+          if (_interstitialLoadAttempts <= maxFailedLoadAttempts) {
             _createInterstitialAd();
           }
         }));
